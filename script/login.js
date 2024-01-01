@@ -9,6 +9,8 @@ const login=()=>{
     .then((resp)=>{
         console.log(resp);
         console.log(resp.user);
+        window.location.replace('dashboard.html');
+
     })
     .catch((error)=>{
         console.log(error);
