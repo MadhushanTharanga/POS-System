@@ -1,10 +1,4 @@
-// function Customer(name,address,salry){
 
-//     this.name  = name;
-//     this.address  = address;
-//     this.salary  = salary;
-
-// }
 createCustomer=()=>{
     const tempCustomer = {
         name : $('#name').val(),
