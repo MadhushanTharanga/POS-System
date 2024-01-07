@@ -10,7 +10,7 @@
     <title>Customer | POS</title>
 </head>
 
-<body>
+<body onload="loadCustomers()">
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -64,32 +64,25 @@
                     <input type="button" id="btn-update" class="btn btn-success col-5" value="Update Customer" onclick="updateCustomer()">
                  </div>
             </div>
-        </div>
+        </div> <br> <br>
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>#Id</th>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Salary</th>
+              <th>Option</th>
+            </tr>
+          </thead>
+          <tbody  id="table-body">
+            
+          </tbody>
+        </table>
     </div>
 
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>#Id</th>
-          <th>Name</th>
-          <th>Address</th>
-          <th>Salary</th>
-          <th>Option</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>01</td>
-          <td>madhushan</td>
-          <td>ratmalna</td>
-          <td>500000</td>
-          <td>
-            <button class="btn btn-danger">Delete</button> |
-            <button class="btn btn-success">Update</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    
 
 
 

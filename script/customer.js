@@ -1,5 +1,5 @@
 
-createCustomer=()=>{
+const createCustomer=()=>{
     const tempCustomer = {
         name : $('#name').val(),
         address : $('#address').val(),
@@ -18,3 +18,27 @@ createCustomer=()=>{
         console.log(error);
     });
 }
+
+const loadCustomers=()=>{
+    const firestore = firebase.firestore();
+    firestore
+        .collection('customers')
+        .get().then((results)=>{
+            results.forEach((records)=>{
+                const data = records.data();
+                const row = `
+                <tr>
+                    <td>${records.id}</td>
+                    <td>${data.name}</td>
+                    <td>${data.address}</td>
+                    <td>${data.salary}</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" onclick="deleteData(${records.id})">Delete</button> |
+                        <button class="btn btn-success btn-sm" onclick="updateData(${records.id})">Update</button>
+                    </td>
+                </tr>
+                `;
+                $('#table-body').append(row);
+            })
+        })
+} 
