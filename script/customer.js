@@ -89,8 +89,9 @@ const deleteData=(id)=>{
         firestore
             .collection('customers')
             .doc(id)
+            .delete()
             .then(()=>{
-                alert('Deleted !!');
+                toastr.success('Deleted!', 'success!!')
                 customerId=undefined;
                 loadCustomers();
             })
