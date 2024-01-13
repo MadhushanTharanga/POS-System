@@ -84,5 +84,15 @@ const updateRecord=()=>{
 }
 
 const deleteData=(id)=>{    
-
+    if(confirm('Are you sure?')){
+        const firestore = firebase.firestore();
+        firestore
+            .collection('customers')
+            .doc(id)
+            .then(()=>{
+                alert('Deleted !!');
+                customerId=undefined;
+                loadCustomers();
+            })
+    }
 }
