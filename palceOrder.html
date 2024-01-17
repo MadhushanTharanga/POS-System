@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>PlaceOrder | POS</title>
 </head>
-<body>
+<body onload="loadCustomerIds()">
     
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -35,6 +35,27 @@
           </div>
         </div>
       </nav>
+<hr>
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <div class="form-group">
+              <select name="" id="customer-id" class="form-control"> 
+              </select>
+            </div>
+          </div>
+          <div class="col-3">
+            <input type="text" disabled class="form-control" id="name">
+          </div>
+          <div class="col-3">
+            <input type="text" disabled class="form-control" id="address">
+          </div>
+          <div class="col-3">
+            <input type="text" disabled class="form-control" id="salary">
+          </div>
+        </div>
+      </div>
+      <hr>
 
 
 
