@@ -13,9 +13,11 @@ const createCustomer=()=>{
     .add(tempCustomer)
     .then((response)=>{
         console.log(response);
+        loadCustomers();
     })
     .catch((error)=>{
         console.log(error);
+        
     });
 }
 
