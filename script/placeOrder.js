@@ -13,3 +13,25 @@ const loadCustomerIds=()=>{
             }));
         }))
 }   
+
+$('#customer-id').on("change" ,function(){
+    const customerId=$(this).val();
+    const firestore = firebase.firestore();
+    firestore
+        .collection('customers')
+        .doc(customerId)
+        .get().then((response)=>{
+            
+            if(response.exists){
+                const data = response.data();
+                $('#name').val(data.name);
+                $('#address').val(data.address);
+                $('#salary').val(data.salary)
+            }
+        })
+})
+
+const loadCustomer=(id)=>{    
+    customerId = id;
+    
+}
