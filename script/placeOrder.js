@@ -1,3 +1,6 @@
+let orders=[
+
+];
 
 const loadIds = () =>{
     loadCustomerIds();
@@ -60,14 +63,44 @@ $('#item-id').on("change" ,function(){
             
             if(response.exists){
                 const data = response.data();
-                $('#description').val(data.Description);
+                $('#description').val(console.log("ghjjh"));
                 $('#unit-price').val(data.unitPrice);
                 $('#qty-on-hand').val(data.qtyOnHand)
             }
         })
 })
 
-const loadCustomer=(id)=>{    
-    customerId = id;
-    
+const addToCart=()=>{
+    const unitPrice = Number.parseInt($('#unit-price').val());
+    const qty = Number.parseInt($('#qty').val());
+    const totalCost = unitPrice * qty;
+
+    const cartObj={
+        "description":$('#item-id').val(),
+        "unitPrice":unitPrice,
+        "qty":qty,
+        "totalCost":totalCost
+    }
+
+    orders.push(cartObj);
+
+    $('#cart-body').empty();
+
+    orders.forEach(data=>{
+        const row=`
+        <tr>
+            <td>${data.code}</td>
+            <td>${data.description}</td>
+            <td>${data.unitPrice}</td>
+            <td>${data.qty}</td>
+            <td>${data.totalCost}</td>
+        </tr>
+        `;
+        $('#cart-body').append(row);
+    });
 }
+
+// const loadCustomer=(id)=>{    
+//     customerId = id;
+    
+// }
