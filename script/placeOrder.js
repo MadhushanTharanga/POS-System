@@ -60,7 +60,7 @@ $('#item-id').on("change" ,function(){
             
             if(response.exists){
                 const data = response.data();
-                $('#description').val(data.description);
+                $('#description').val(data.Description);
                 $('#unit-price').val(data.unitPrice);
                 $('#qty-on-hand').val(data.qtyOnHand)
             }
